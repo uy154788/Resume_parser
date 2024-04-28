@@ -1,0 +1,5 @@
+docx2txt
+pypdf2
+pandas
+nltk
+spacy

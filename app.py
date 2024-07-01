@@ -2,16 +2,13 @@ from flask import Flask, request, jsonify
 import random
 import requests
 from io import BytesIO
-import re
 import nltk
 import PyPDF2
-import spacy
 import en_core_web_sm
 from spacy.matcher import Matcher
 from nltk.corpus import stopwords
 import pandas as pd
 import docx2txt
-from PyPDF2 import PdfFileReader
 
 nltk.download('stopwords')
 nltk.download('punkt')

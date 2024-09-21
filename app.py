@@ -59,13 +59,13 @@ def extract_skills():
     matched_skills = extract_skills_from_resume(textinput, skills_csv_path)
 
     questions = load_questions(questions_file_path)
-    response_questions = {}
+    response_questions = []
     for skill in matched_skills:
         filtered_questions = filter_questions(questions, skill)
         random_question = choose_random_question(filtered_questions)
-        response_questions[skill] = random_question
+        response_questions.append(random_question)
 
-    return jsonify({'skills': matched_skills, 'questions': response_questions})
+    return jsonify(response_questions)
 
 
 def extract_skills_from_resume(resume_text, skills_csv_path):
@@ -127,6 +127,6 @@ def pdftotext(pdf_file):
         text += page.extractText()
 
     return text.strip()
-
 if __name__ == '__main__':
     app.run(debug=True)
+
